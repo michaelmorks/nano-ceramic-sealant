@@ -206,6 +206,9 @@ nav{
 
 .main-head{
 
+    position: relative;
+    overflow: hidden;
+
     background:
     linear-gradient(
         rgba(0,0,0,0.65),
@@ -230,6 +233,30 @@ nav{
     padding: 40px 20px;
 }
 
+
+/* BLEND INTO NEXT SECTION */
+
+.main-head::after{
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 220px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(43,43,43,0) 0%,
+        #2b2b2b 100%
+    );
+
+    pointer-events: none;
+}
+
+
 /* TITLE */
 
 .main-head h1{
@@ -252,6 +279,9 @@ nav{
     margin-bottom: 25px;
 
     line-height: 1.1;
+
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -268,6 +298,9 @@ nav{
     line-height: 1.8;
 
     margin-bottom: 35px;
+
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -293,13 +326,21 @@ nav{
     cursor: pointer;
 
     transition: 0.3s ease;
+
+    position: relative;
+    z-index: 2;
 }
 
-/* HOVER (FIXED) */
+
+/* HOVER */
+
 .main-head a:hover{
     background: #dcdcdc;
     transform: translateY(-3px);
 }
+
+
+/* MOBILE */
 
 @media (max-width: 768px){
 
@@ -314,6 +355,10 @@ nav{
 
     .main-head button{
         width: auto;
+    }
+
+    .main-head::after{
+        height: 140px;
     }
 
 }
@@ -410,9 +455,6 @@ nav{
     transition: 0.6s ease;
 }
 
-
-
-
 /* =========================
    BOX TITLE
 ========================= */
@@ -443,7 +485,9 @@ nav{
 
 
 
-
+/* =========================
+   why choice Ceramic
+========================= */
 
 /* =========================
    TITLE
@@ -623,6 +667,8 @@ nav{
         grid-template-columns: 1fr;
     }
 }
+
+
 
 /* ===== CONTACT FORM SECTION ===== */
 #form {
