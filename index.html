@@ -185,7 +185,7 @@
                 <div class="title-form">
                     <h1>Interested? Get In Touch</h1>
                 </div>
-                <form>
+                <form id="contact-form" action="https://formspree.io/f/mykobdkl" method="POST">
                     <label for="fname"></label>
                     <input type="text" id="fname" placeholder="Enter First Name" required>
 
@@ -193,7 +193,7 @@
                     <input type="email" id="email" placeholder="Enter Email Address" required>
 
                     <label for="phone"></label>
-                    <input type="tel" id="phone" placeholder="Enter Phone Number" required>
+                    <input type="tel" id="phone" placeholder="Enter Phone Number" required     pattern="[0-9]+" inputmode="numeric">
 
                     <label for="cname"></label>
                     <input type="text" id="cname" placeholder="Enter Company Name" required>
@@ -204,6 +204,10 @@
                     <input type="submit">
 
                 </form>
+
+                <p id="success-message" style="display:none; margin-top:15px; color:green;">
+                    <strong>Inquiry Received! We'll be in touch shortly.</strong>
+
             </section>
 
  </main>
@@ -242,7 +246,9 @@
   </footer>
   <!-- ================= END FOOTER ================= -->
 
-    <script src="js.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="js.js"></script>
 
 </body>
 </html>
