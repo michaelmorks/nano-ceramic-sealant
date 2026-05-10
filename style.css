@@ -1184,4 +1184,8 @@ nav{
     .morks-wrapper{
         justify-content: center;
     }
+
+    .title-form h1{
+        text-align: center;
+    }
 }
