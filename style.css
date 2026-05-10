@@ -700,10 +700,52 @@ nav {
     }
 
     /* FIRST 2 IMAGES SIDE BY SIDE */
+
     .service-gallery{
         grid-template-columns: 1fr 1fr;
         gap: 16px;
     }
+    
+
+    /* FORCE TEXT TO FIT INSIDE CARD */
+.overlay{
+    padding: 12px;
+}
+
+.overlay h4{
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.overlay p{
+    font-size: 0.75rem;
+    line-height: 1.3;
+
+    /* prevents overflow */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.overlay ul{
+    font-size: 0.7rem;
+    line-height: 1.3;
+
+    margin-top: 5px;
+    padding-left: 14px;
+
+    /* prevents overflow */
+    max-height: 70px;
+    overflow: hidden;
+}
+
+
+.service-card img{
+    object-fit: cover;
+    height: 100%;
+}
+
 }
 
 
