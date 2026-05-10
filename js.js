@@ -8,6 +8,9 @@ hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
+// ADD this anywhere in your JS file
+document.addEventListener('touchstart', () => {}, { passive: true });
+
 
 /* ── FORMSPREE ── */
 const form = document.getElementById("contact-form");
