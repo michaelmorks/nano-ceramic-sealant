@@ -211,8 +211,8 @@ nav{
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.65),
-        rgba(0,0,0,0.65)
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
     ),
     url("img/img8.jpg");
 
@@ -230,11 +230,11 @@ nav{
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding: 80px 20px;
 }
 
 
-/* BLEND INTO NEXT SECTION */
+/* BLEND */
 
 .main-head::after{
     content: "";
@@ -257,6 +257,30 @@ nav{
 }
 
 
+/* CONTENT ABOVE OVERLAY */
+
+.main-head > *{
+    position: relative;
+    z-index: 2;
+}
+
+
+/* TAG */
+
+.hero-tag{
+    color: #bcbcbc;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+
+    max-width: 900px;
+}
+
+
 /* TITLE */
 
 .main-head h1{
@@ -264,97 +288,192 @@ nav{
     background: linear-gradient(
         90deg,
         #ffffff,
-        rgba(165, 165, 165, 0.8)
+        rgba(180,180,180,0.8)
     );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 700;
 
-    max-width: 900px;
+    max-width: 1000px;
 
     margin-bottom: 25px;
 
-    line-height: 1.1;
-
-    position: relative;
-    z-index: 2;
+    line-height: 1.05;
 }
 
 
-/* SUBTEXT */
+/* SUBTITLE */
+
+.main-head h2{
+    color: white;
+
+    font-size: 1.7rem;
+    font-weight: 500;
+
+    max-width: 800px;
+
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+}
+
+
+/* DESCRIPTION */
 
 .main-head h3{
     color: #d6d6d6;
 
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
 
-    max-width: 850px;
+    max-width: 900px;
 
     line-height: 1.8;
 
-    margin-bottom: 35px;
+    margin-bottom: 50px;
+}
 
-    position: relative;
-    z-index: 2;
+
+/* =========================
+   STATS
+========================= */
+
+.hero-stats{
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+    width: 100%;
+
+    margin-bottom: 50px;
+}
+
+
+.hero-stat{
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    padding: 28px 20px;
+
+    color: white;
+
+    transition: 0.4s ease;
+}
+
+.hero-stat:hover{
+    transform: translateY(-6px);
+
+    background: rgba(255,255,255,0.12);
+}
+
+
+/* NUMBERS */
+
+.hero-stat{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+
+/* LABELS */
+
+.hero-stat p{
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    color: #d0d0d0;
+
+    letter-spacing: 1px;
+
+    margin-top: 12px;
 }
 
 
 /* BUTTON */
 
-.main-head a{
+.hero-btn{
     display: inline-block;
 
     background: white;
     color: black;
 
-    border: none;
-
     padding: 16px 38px;
 
-    font-size: 1rem;
-    font-weight: 600;
-
-    border-radius: 20px;
+    border-radius: 18px;
 
     text-decoration: none;
 
-    cursor: pointer;
+    font-weight: 600;
 
     transition: 0.3s ease;
-
-    position: relative;
-    z-index: 2;
 }
 
-
-/* HOVER */
-
-.main-head a:hover{
+.hero-btn:hover{
     background: #dcdcdc;
     transform: translateY(-3px);
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media (max-width: 768px){
+@media (max-width: 1000px){
+
+    .hero-stats{
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .main-head h1{
-        font-size: 2.3rem;
+        font-size: 3.2rem;
+    }
+
+}
+@media (max-width: 768px){
+
+    .main-head{
+        padding: 120px 20px 100px;
+    }
+
+    .main-head h1{
+        font-size: 2.4rem;
+    }
+
+    .main-head h2{
+        font-size: 1.2rem;
     }
 
     .main-head h3{
         font-size: 1rem;
-        line-height: 1.6;
+        line-height: 1.7;
     }
 
-    .main-head button{
-        width: auto;
+    /* STATS SIDE BY SIDE */
+    .hero-stats{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .hero-stat{
+        font-size: 1.6rem;
+        padding: 22px 15px;
+    }
+
+    .hero-stat p{
+        font-size: 0.7rem;
+        line-height: 1.4;
     }
 
     .main-head::after{
@@ -362,6 +481,8 @@ nav{
     }
 
 }
+
+
 
 /* =========================
    HOME SECTION
@@ -715,15 +836,10 @@ nav{
         font-size: 1rem;
     }
 
+    /* FIRST 2 IMAGES SIDE BY SIDE */
     .service-gallery{
         grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 480px){
-
-    .service-gallery{
-        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
 
