@@ -624,12 +624,12 @@ nav {
     flex-direction: column;
     justify-content: flex-end;
 
-    padding: 20px;
+    padding: 18px;
 
     background: linear-gradient(
         to top,
-        rgba(0,0,0,0.85),
-        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.92),
+        rgba(0,0,0,0.55),
         transparent
     );
 
@@ -639,16 +639,41 @@ nav {
     transform: translateY(20px);
 
     transition: all 0.4s ease;
+
+    overflow: hidden;
 }
 
 .overlay h4{
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     margin-bottom: 6px;
+    line-height: 1.2;
 }
 
 .overlay p{
-    font-size: 0.95rem;
-    opacity: 0.85;
+    font-size: 0.85rem;
+    opacity: 0.9;
+
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* IMPORTANT for your ULs */
+.overlay ul{
+    padding-left: 18px;
+    margin: 0;
+
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.overlay li{
+    margin-bottom: 4px;
+}
+
+.overlay{
+    max-height: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -1011,7 +1036,7 @@ nav {
 
 .rights {
     color: rgba(255,255,255,0.6);
-    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    font-size: 1rem
 }
 
 .morks-wrapper {
@@ -1022,7 +1047,7 @@ nav {
 }
 
 .footer-Morks {
-    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    font-size: 1rem;
     color: rgba(255,255,255,0.75);
 }
 
