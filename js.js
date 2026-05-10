@@ -57,3 +57,45 @@ form.addEventListener("submit", async function (e) {
     alert("Submission failed. Please check your connection.");
   }
 });
+
+
+/* ── COUNT-UP ANIMATION ── */
+function animateCounter(el) {
+    if (el.dataset.animated) return;
+    el.dataset.animated = true;
+  
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let val = 0;
+  
+    const timer = setInterval(() => {
+      val = Math.min(val + step, target);
+      el.textContent = Math.round(val);
+      if (val >= target) clearInterval(timer);
+    }, 16);
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    counters.forEach(counter => {
+      const rect = counter.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        animateCounter(counter);
+      } else {
+        observer.observe(counter);
+      }
+    });
+  });
+  
