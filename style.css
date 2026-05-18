@@ -840,6 +840,7 @@ nav {
 
     text-decoration: none;
     font-weight: 600;
+    align-items: center;
 
     transition: 0.3s ease;
 }
