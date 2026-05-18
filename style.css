@@ -30,6 +30,99 @@ img {
     display: block;
 }
 
+/* ================= LOADING SCREEN ================= */
+
+#loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    padding: 20px;        /* safe zone on small screens */
+    box-sizing: border-box;
+  }
+  
+  #loader-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .loader-spinner {
+    --uib-size: 60px;
+    --uib-color: rgb(255, 255, 255);
+    --uib-speed: 1.5s;
+    --dot-size: calc(var(--uib-size) * 0.17);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    animation: smoothRotate calc(var(--uib-speed) * 1.8) linear infinite;
+    background: transparent !important;
+  }
+  
+  .dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: rotate var(--uib-speed) ease-in-out infinite;
+  }
+  
+  .dot::before {
+    content: '';
+    height: var(--dot-size);
+    width: var(--dot-size);
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot:nth-child(2),
+  .dot:nth-child(2)::before {
+    animation-delay: calc(var(--uib-speed) * -0.835 * 0.5);
+  }
+  
+  .dot:nth-child(3),
+  .dot:nth-child(3)::before {
+    animation-delay: calc(var(--uib-speed) * -0.668 * 0.5);
+  }
+  
+  .dot:nth-child(4),
+  .dot:nth-child(4)::before {
+    animation-delay: calc(var(--uib-speed) * -0.501 * 0.5);
+  }
+  
+  .dot:nth-child(5),
+  .dot:nth-child(5)::before {
+    animation-delay: calc(var(--uib-speed) * -0.334 * 0.5);
+  }
+  
+  .dot:nth-child(6),
+  .dot:nth-child(6)::before {
+    animation-delay: calc(var(--uib-speed) * -0.167 * 0.5);
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    65%, 100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes smoothRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* ================= END OF LOADING SCREEN ================= */
+
 
 /* =========================
    NAVBAR
@@ -516,7 +609,7 @@ nav {
     padding: 0 20px;
 }
 
-.title-service h1{
+.title-service h2{
     background: linear-gradient(90deg, #787878, rgba(0, 0, 0, 0.85));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -927,7 +1020,7 @@ nav {
     margin-bottom: 10px;
 }
 
-.title-form h1 {
+.title-form h2 {
     background: linear-gradient(90deg, #ffffff, rgba(180,180,180,0.8));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

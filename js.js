@@ -102,3 +102,9 @@ function animateCounter(el) {
     });
   });
   
+  /* ── LOADING SCREEN ── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader-overlay').classList.add('hidden');
+  }, 3000);
+});
